@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BonusData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/bonus_data.gd" id="1_bdata"]
+
+[resource]
+script = ExtResource("1_bdata")
+id = "gold_bag"
+bonus_name = "Túi Tiền Khởi Nghiệp"
+icon_path = "res://assets/sprites/bonuses/bonus_gold_bag.png"
+description = "Nhận ngay +100 Vàng trắng tay đầu trận để mua sắm sớm."
+playstyle_hint = "Định hướng: Lên trang bị sớm ngay sau Đợt 1 để áp đảo hỏa lực đầu trận."
+kind = 1
+value = 100.0
+weight = 14.0
+accent_color = Color(1, 0.85, 0.15, 1)
+

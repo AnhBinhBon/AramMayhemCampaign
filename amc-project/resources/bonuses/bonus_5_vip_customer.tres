@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BonusData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/bonus_data.gd" id="1_bdata"]
+
+[resource]
+script = ExtResource("1_bdata")
+id = "vip_customer"
+bonus_name = "Khách Quen Thương Hội"
+icon_path = "res://assets/sprites/bonuses/bonus_vip_customer.png"
+description = "Giảm 15% giá mua mọi Trang bị trong Shop và tặng kèm +35 Vàng."
+playstyle_hint = "Định hướng: Nhanh chóng lấp đầy 6 ô trang bị với chi phí tiết kiệm."
+kind = 4
+value = 0.15
+weight = 12.0
+accent_color = Color(0.35, 0.95, 0.62, 1)
+

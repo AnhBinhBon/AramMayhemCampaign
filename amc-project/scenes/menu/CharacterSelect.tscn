@@ -1,0 +1,378 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/character_select_ui.gd" id="1_csel"]
+
+[node name="CharacterSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_csel")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.06, 0.07, 0.1, 1)
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 20
+
+[node name="MainVBox" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="HeaderVBox" type="VBoxContainer" parent="Margin/MainVBox"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="TitleLabel" type="Label" parent="Margin/MainVBox/HeaderVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.84, 0.22, 1)
+theme_override_font_sizes/font_size = 28
+text = "CHỌN CHIẾN BINH XUẤT KÍCH CHIẾN DỊCH"
+horizontal_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="Margin/MainVBox/HeaderVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.85, 0.92, 1)
+theme_override_font_sizes/font_size = 14
+text = "Tích chọn (Tick Box) 1 trong 4 Tướng Biểu tượng (Vayne, Xin Zhao, Garen, Lux) với bộ 3 Kỹ năng [Q] - [E] - [SPACE]"
+horizontal_alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="Margin/MainVBox/HeaderVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.95, 0.62, 1)
+theme_override_font_sizes/font_size = 14
+text = "★ KỶ LỤC ĐIỂM CAO NHẤT: 0 ĐIỂM ★"
+horizontal_alignment = 1
+
+[node name="CardsHBox" type="HBoxContainer" parent="Margin/MainVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="CardAD" type="PanelContainer" parent="Margin/MainVBox/CardsHBox"]
+custom_minimum_size = Vector2(285, 420)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Margin" type="MarginContainer" parent="Margin/MainVBox/CardsHBox/CardAD"]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 14
+
+[node name="VBox" type="VBoxContainer" parent="Margin/MainVBox/CardsHBox/CardAD/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="StatusBadge" type="Label" parent="Margin/MainVBox/CardsHBox/CardAD/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.32, 0.96, 0.55, 1)
+theme_override_font_sizes/font_size = 12
+text = "[ ĐANG CHỌN ]"
+horizontal_alignment = 1
+
+[node name="IconRect" type="TextureRect" parent="Margin/MainVBox/CardsHBox/CardAD/Margin/VBox"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ClassNameLabel" type="Label" parent="Margin/MainVBox/CardsHBox/CardAD/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.68, 0.2, 1)
+theme_override_font_sizes/font_size = 19
+text = "VAYNE - XẠ THỦ (AD)"
+horizontal_alignment = 1
+
+[node name="BuffLabel" type="Label" parent="Margin/MainVBox/CardsHBox/CardAD/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.95, 0.55, 1)
+theme_override_font_sizes/font_size = 12
+text = "+15% Tốc đánh, +10% Chí mạng"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="DebuffLabel" type="Label" parent="Margin/MainVBox/CardsHBox/CardAD/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.42, 0.42, 1)
+theme_override_font_sizes/font_size = 12
+text = "-15% Máu tối đa"
+horizontal_alignment = 1
+
+[node name="InfoLabel" type="Label" parent="Margin/MainVBox/CardsHBox/CardAD/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.85, 0.88, 0.94, 1)
+theme_override_font_sizes/font_size = 11
+text = "• Vũ khí: Nỏ Bạc Thợ Săn (Tầm 360px, bắn đạn bạc tốc độ cao)
+• [Q] Nhào Lộn & Tên Bạc (3.5s): Lướt 150px & bắn tên 140% AD + 8% Máu tối đa
+• [E] Kết Án (7.5s): Bắn tên đẩy lùi & làm choáng 1.2s (+100% AD nếu va tường)
+• [SPACE] Giờ Khắc Cuối Cùng (10s): Ẩn thân 0.8s, +35% AD, +50% Tốc đánh (4.5s)."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="SelectButton" type="CheckBox" parent="Margin/MainVBox/CardsHBox/CardAD/Margin/VBox"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+button_pressed = true
+text = "Chọn Xạ Thủ (AD)"
+alignment = 1
+
+[node name="CardBruiser" type="PanelContainer" parent="Margin/MainVBox/CardsHBox"]
+custom_minimum_size = Vector2(285, 420)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Margin" type="MarginContainer" parent="Margin/MainVBox/CardsHBox/CardBruiser"]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 14
+
+[node name="VBox" type="VBoxContainer" parent="Margin/MainVBox/CardsHBox/CardBruiser/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="StatusBadge" type="Label" parent="Margin/MainVBox/CardsHBox/CardBruiser/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.75, 0.85, 1)
+theme_override_font_sizes/font_size = 12
+text = "[ SẴN SÀNG ]"
+horizontal_alignment = 1
+
+[node name="IconRect" type="TextureRect" parent="Margin/MainVBox/CardsHBox/CardBruiser/Margin/VBox"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ClassNameLabel" type="Label" parent="Margin/MainVBox/CardsHBox/CardBruiser/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.4, 0.4, 1)
+theme_override_font_sizes/font_size = 19
+text = "XIN ZHAO - ĐẤU SĨ"
+horizontal_alignment = 1
+
+[node name="BuffLabel" type="Label" parent="Margin/MainVBox/CardsHBox/CardBruiser/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.95, 0.55, 1)
+theme_override_font_sizes/font_size = 12
+text = "+15% Máu tối đa, +8% Hút máu"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="DebuffLabel" type="Label" parent="Margin/MainVBox/CardsHBox/CardBruiser/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.42, 0.42, 1)
+theme_override_font_sizes/font_size = 12
+text = "-10% Tầm đánh"
+horizontal_alignment = 1
+
+[node name="InfoLabel" type="Label" parent="Margin/MainVBox/CardsHBox/CardBruiser/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.85, 0.88, 0.94, 1)
+theme_override_font_sizes/font_size = 11
+text = "• Vũ khí: Trường Thương Tể Tướng (Tầm 105px, chém quét hút máu)
+• [Q] Liên Hoàn Tam Kích (4.5s): Đâm 3 nhát 210% AD, hất tung & giảm hồi chiêu
+• [E] Can Trường (6.5s): Lao áp sát 260px, nổ AoE làm chậm & +45% Tốc đánh
+• [SPACE] Bán Nguyệt Thương (11s): Quét thương hất văng, +35% Tốc chạy & +20% Hút máu."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="SelectButton" type="CheckBox" parent="Margin/MainVBox/CardsHBox/CardBruiser/Margin/VBox"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Chọn Đấu Sĩ (Bruiser)"
+alignment = 1
+
+[node name="CardTank" type="PanelContainer" parent="Margin/MainVBox/CardsHBox"]
+custom_minimum_size = Vector2(285, 420)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Margin" type="MarginContainer" parent="Margin/MainVBox/CardsHBox/CardTank"]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 14
+
+[node name="VBox" type="VBoxContainer" parent="Margin/MainVBox/CardsHBox/CardTank/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="StatusBadge" type="Label" parent="Margin/MainVBox/CardsHBox/CardTank/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.75, 0.85, 1)
+theme_override_font_sizes/font_size = 12
+text = "[ SẴN SÀNG ]"
+horizontal_alignment = 1
+
+[node name="IconRect" type="TextureRect" parent="Margin/MainVBox/CardsHBox/CardTank/Margin/VBox"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ClassNameLabel" type="Label" parent="Margin/MainVBox/CardsHBox/CardTank/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.92, 0.52, 1)
+theme_override_font_sizes/font_size = 19
+text = "GAREN - ĐỠ ĐÒN (TANK)"
+horizontal_alignment = 1
+
+[node name="BuffLabel" type="Label" parent="Margin/MainVBox/CardsHBox/CardTank/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.95, 0.55, 1)
+theme_override_font_sizes/font_size = 12
+text = "+35% Máu tối đa, +10 Giáp"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="DebuffLabel" type="Label" parent="Margin/MainVBox/CardsHBox/CardTank/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.42, 0.42, 1)
+theme_override_font_sizes/font_size = 12
+text = "-15% Tốc độ di chuyển"
+horizontal_alignment = 1
+
+[node name="InfoLabel" type="Label" parent="Margin/MainVBox/CardsHBox/CardTank/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.85, 0.88, 0.94, 1)
+theme_override_font_sizes/font_size = 11
+text = "• Vũ khí: Đại Kiếm Demacia (Tầm 110px, bổ quét 180 độ hất văng)
+• [Q] Đòn Quyết Định (4.5s): +35% Tốc chạy & bổ kiếm gây 145% AD + 80% Giáp (Câm lặng)
+• [E] Phán Quyết (7.5s): Xoay đại kiếm quanh thân 3.0s nghiền nát đàn quái
+• [SPACE] Công Lý Demacia (10.5s): Giảm 50% sát thương & giáng Đại Kiếm Ánh Sáng."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="SelectButton" type="CheckBox" parent="Margin/MainVBox/CardsHBox/CardTank/Margin/VBox"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Chọn Đỡ Đòn (Tank)"
+alignment = 1
+
+[node name="CardAP" type="PanelContainer" parent="Margin/MainVBox/CardsHBox"]
+custom_minimum_size = Vector2(285, 420)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Margin" type="MarginContainer" parent="Margin/MainVBox/CardsHBox/CardAP"]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 14
+
+[node name="VBox" type="VBoxContainer" parent="Margin/MainVBox/CardsHBox/CardAP/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="StatusBadge" type="Label" parent="Margin/MainVBox/CardsHBox/CardAP/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.75, 0.85, 1)
+theme_override_font_sizes/font_size = 12
+text = "[ SẴN SÀNG ]"
+horizontal_alignment = 1
+
+[node name="IconRect" type="TextureRect" parent="Margin/MainVBox/CardsHBox/CardAP/Margin/VBox"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ClassNameLabel" type="Label" parent="Margin/MainVBox/CardsHBox/CardAP/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.74, 0.52, 1, 1)
+theme_override_font_sizes/font_size = 19
+text = "LUX - PHÁP SƯ (AP)"
+horizontal_alignment = 1
+
+[node name="BuffLabel" type="Label" parent="Margin/MainVBox/CardsHBox/CardAP/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.95, 0.55, 1)
+theme_override_font_sizes/font_size = 12
+text = "+25% Phép thuật (AP), +20 Hồi chiêu"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="DebuffLabel" type="Label" parent="Margin/MainVBox/CardsHBox/CardAP/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.42, 0.42, 1)
+theme_override_font_sizes/font_size = 12
+text = "-20% Máu tối đa"
+horizontal_alignment = 1
+
+[node name="InfoLabel" type="Label" parent="Margin/MainVBox/CardsHBox/CardAP/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.85, 0.88, 0.94, 1)
+theme_override_font_sizes/font_size = 11
+text = "• Vũ khí: Trượng Ánh Sáng (Tầm 245px, phóng cầu nổ AoE 85px)
+• [Q] Khóa Ánh Sáng (4.0s): Bắn cầu xuyên 2 mục tiêu gây 145% AP & Trói chân 1.5s
+• [E] Quả Cầu Ánh Sáng (6.0s): Làm chậm 40% & phát nổ diện rộng 185% AP
+• [SPACE] Cầu Vồng Tối Thượng (8.5s): Phóng tia laser 520px gây 300% AP (+25% nếu trói)."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="SelectButton" type="CheckBox" parent="Margin/MainVBox/CardsHBox/CardAP/Margin/VBox"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Chọn Pháp Sư (AP)"
+alignment = 1
+
+[node name="FooterHBox" type="HBoxContainer" parent="Margin/MainVBox"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="StartButton" type="Button" parent="Margin/MainVBox/FooterHBox"]
+custom_minimum_size = Vector2(390, 48)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "XUẤT KÍCH CHIẾN DỊCH (ENTER)"
+
+[node name="QuitButton" type="Button" parent="Margin/MainVBox/FooterHBox"]
+custom_minimum_size = Vector2(180, 48)
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "VỀ MENU CHÍNH"
+
+[node name="ExitAppButton" type="Button" parent="Margin/MainVBox/FooterHBox"]
+custom_minimum_size = Vector2(160, 48)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.42, 0.42, 1)
+theme_override_font_sizes/font_size = 15
+text = "✖ THOÁT GAME"

@@ -1,0 +1,333 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/hud.gd" id="1_hud"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_hud")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TopLeftPanel" type="PanelContainer" parent="Root"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 14.0
+offset_right = 385.0
+offset_bottom = 162.0
+
+[node name="VBox" type="VBoxContainer" parent="Root/TopLeftPanel"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="HPBar" type="ProgressBar" parent="Root/TopLeftPanel/VBox"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+value = 100.0
+show_percentage = false
+
+[node name="HPLabel" type="Label" parent="Root/TopLeftPanel/VBox/HPBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 14
+text = "MÁU: 100 / 100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StatsLabel" type="Label" parent="Root/TopLeftPanel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "AD: 18  |  Tốc đánh: 1.85/s
+Chí mạng: 15%  |  Giáp: 5  |  Tốc chạy: 240"
+
+[node name="BonusHBox" type="HBoxContainer" parent="Root/TopLeftPanel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="BonusIcon" type="TextureRect" parent="Root/TopLeftPanel/VBox/BonusHBox"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BonusLabel" type="Label" parent="Root/TopLeftPanel/VBox/BonusHBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "Phúc lợi: Vé May Mắn"
+
+[node name="TopCenterPanel" type="PanelContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -160.0
+offset_top = 14.0
+offset_right = 160.0
+offset_bottom = 86.0
+grow_horizontal = 2
+
+[node name="VBox" type="VBoxContainer" parent="Root/TopCenterPanel"]
+layout_mode = 2
+alignment = 1
+
+[node name="WaveTitleLabel" type="Label" parent="Root/TopCenterPanel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.86, 0.25, 1)
+theme_override_font_sizes/font_size = 18
+text = "ĐỢT 1 / 7"
+horizontal_alignment = 1
+
+[node name="TimerHBox" type="HBoxContainer" parent="Root/TopCenterPanel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="TimerIcon" type="TextureRect" parent="Root/TopCenterPanel/VBox/TimerHBox"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TimerLabel" type="Label" parent="Root/TopCenterPanel/VBox/TimerHBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "00:45"
+horizontal_alignment = 1
+
+[node name="TopRightPanel" type="PanelContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -255.0
+offset_top = 14.0
+offset_right = -16.0
+offset_bottom = 128.0
+grow_horizontal = 0
+
+[node name="VBox" type="VBoxContainer" parent="Root/TopRightPanel"]
+layout_mode = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="GoldHBox" type="HBoxContainer" parent="Root/TopRightPanel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="GoldIcon" type="TextureRect" parent="Root/TopRightPanel/VBox/GoldHBox"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="GoldLabel" type="Label" parent="Root/TopRightPanel/VBox/GoldHBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.88, 0.18, 1)
+theme_override_font_sizes/font_size = 18
+text = "VÀNG: 0"
+horizontal_alignment = 1
+
+[node name="KillsHBox" type="HBoxContainer" parent="Root/TopRightPanel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="KillsIcon" type="TextureRect" parent="Root/TopRightPanel/VBox/KillsHBox"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="KillsLabel" type="Label" parent="Root/TopRightPanel/VBox/KillsHBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "TIÊU DIỆT: 0"
+horizontal_alignment = 1
+
+[node name="QuickExitHBox" type="HBoxContainer" parent="Root/TopRightPanel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="MenuTopButton" type="Button" parent="Root/TopRightPanel/VBox/QuickExitHBox"]
+custom_minimum_size = Vector2(128, 30)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "⬅ ĐỔI TƯỚNG [ESC]"
+
+[node name="QuitTopButton" type="Button" parent="Root/TopRightPanel/VBox/QuickExitHBox"]
+custom_minimum_size = Vector2(92, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.42, 0.42, 1)
+theme_override_font_sizes/font_size = 12
+text = "✖ THOÁT"
+
+[node name="BottomCenterPanel" type="PanelContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -185.0
+offset_top = -56.0
+offset_right = 185.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBox" type="HBoxContainer" parent="Root/BottomCenterPanel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="SkillIcon" type="TextureRect" parent="Root/BottomCenterPanel/HBox"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SkillBar" type="ProgressBar" parent="Root/BottomCenterPanel/HBox"]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 6.0
+value = 6.0
+show_percentage = false
+
+[node name="SkillLabel" type="Label" parent="Root/BottomCenterPanel/HBox/SkillBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 14
+text = "[SPACE] Lướt Chiến Thuật - SẴN SÀNG"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BossPanel" type="PanelContainer" parent="Root"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -260.0
+offset_top = 12.0
+offset_right = 260.0
+offset_bottom = 92.0
+grow_horizontal = 2
+
+[node name="VBox" type="VBoxContainer" parent="Root/BossPanel"]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="BossNameLabel" type="Label" parent="Root/BossPanel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.28, 0.38, 1)
+theme_override_font_sizes/font_size = 15
+text = "★ CHIẾN HẠM HỦY DIỆT - TRÙM CUỐI ★"
+horizontal_alignment = 1
+
+[node name="BossHPBar" type="ProgressBar" parent="Root/BossPanel/VBox"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+value = 100.0
+show_percentage = false
+
+[node name="BossHPLabel" type="Label" parent="Root/BossPanel/VBox/BossHPBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 13
+text = "100000 / 100000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BossPhaseLabel" type="Label" parent="Root/BossPanel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.55, 1, 1)
+theme_override_font_sizes/font_size = 12
+text = "PHA 1: VÒNG ĐẠN & LAO HÚC TỐC ĐỘ CAO"
+horizontal_alignment = 1
+
+[node name="BannerLabel" type="Label" parent="Root"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.0
+offset_top = 104.0
+offset_right = 320.0
+offset_bottom = 142.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 20
+text = "THÔNG BÁO SỰ KIỆN"
+horizontal_alignment = 1
+
+[node name="IntermissionPanel" type="PanelContainer" parent="Root"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -265.0
+offset_top = -130.0
+offset_right = 265.0
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Root/IntermissionPanel"]
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="Root/IntermissionPanel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.28, 0.95, 0.55, 1)
+theme_override_font_sizes/font_size = 24
+text = "HOÀN THÀNH ĐỢT 1!"
+horizontal_alignment = 1
+
+[node name="DescLabel" type="Label" parent="Root/IntermissionPanel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Thông tin tổng kết đợt đấu"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ButtonsHBox" type="HBoxContainer" parent="Root/IntermissionPanel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="NextWaveButton" type="Button" parent="Root/IntermissionPanel/VBox/ButtonsHBox"]
+custom_minimum_size = Vector2(210, 42)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "TIẾP TỤC ĐỢT TIẾP THEO"
+
+[node name="MenuButton" type="Button" parent="Root/IntermissionPanel/VBox/ButtonsHBox"]
+custom_minimum_size = Vector2(180, 42)
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "CHỌN TƯỚNG / MENU"

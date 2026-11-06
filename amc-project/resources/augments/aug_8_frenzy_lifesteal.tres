@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AugmentData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/augment_data.gd" id="1_adata"]
+[ext_resource type="Script" path="res://scripts/augment/effects/low_hp_berserk_effect.gd" id="2_feff"]
+
+[sub_resource type="Resource" id="Resource_eff1"]
+script = ExtResource("2_feff")
+
+[resource]
+script = ExtResource("1_adata")
+id = "frenzy_lifesteal"
+augment_name = "Hút Máu Cuồng Loạn"
+icon_path = "res://assets/sprites/augments/aug_frenzy_lifesteal.png"
+description = "Khi Máu dưới 30%, nhận ngay +100% Tốc độ đánh & +20% Hút máu."
+rarity = 1
+accent_color = Color(1, 0.85, 0.20, 1)
+modifiers = []
+effects = [SubResource("Resource_eff1")]

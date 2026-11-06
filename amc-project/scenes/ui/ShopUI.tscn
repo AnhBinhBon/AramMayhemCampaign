@@ -1,0 +1,139 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/shop_ui.gd" id="1_shopui"]
+
+[node name="ShopUI" type="CanvasLayer"]
+process_mode = 3
+layer = 11
+script = ExtResource("1_shopui")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Backdrop" type="ColorRect" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.05, 0.08, 0.92)
+
+[node name="Panel" type="MarginContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 36
+theme_override_constants/margin_bottom = 18
+
+[node name="VBox" type="VBoxContainer" parent="Root/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HeaderHBox" type="HBoxContainer" parent="Root/Panel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TitleLabel" type="Label" parent="Root/Panel/VBox/HeaderHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
+text = "CỬA HÀNG CHIẾN DỊCH"
+
+[node name="GoldHBox" type="HBoxContainer" parent="Root/Panel/VBox/HeaderHBox"]
+layout_mode = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="GoldIcon" type="TextureRect" parent="Root/Panel/VBox/HeaderHBox/GoldHBox"]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="GoldLabel" type="Label" parent="Root/Panel/VBox/HeaderHBox/GoldHBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.88, 0.2, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+
+[node name="RerollButton" type="Button" parent="Root/Panel/VBox/HeaderHBox"]
+custom_minimum_size = Vector2(240, 38)
+layout_mode = 2
+text = "ĐỔI HÀNG (Giá: 5 Vàng)"
+
+[node name="Sep1" type="HSeparator" parent="Root/Panel/VBox"]
+layout_mode = 2
+
+[node name="OffersHeader" type="Label" parent="Root/Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.78, 0.9, 1)
+theme_override_font_sizes/font_size = 13
+text = "VẬT PHẨM BÀY BÁN (4 MÓN THEO TỈ LỆ BẬC CỦA ĐỢT):"
+
+[node name="OffersContainer" type="HBoxContainer" parent="Root/Panel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="Sep2" type="HSeparator" parent="Root/Panel/VBox"]
+layout_mode = 2
+
+[node name="InventoryHeader" type="Label" parent="Root/Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.78, 0.9, 1)
+theme_override_font_sizes/font_size = 13
+text = "TÚI ĐỒ TRANG BỊ CỦA BẠN (TỐI ĐA 6 Ô):"
+
+[node name="InventoryContainer" type="HBoxContainer" parent="Root/Panel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="StatsSummaryLabel" type="Label" parent="Root/Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.85, 1, 1)
+theme_override_font_sizes/font_size = 12
+text = "CHỈ SỐ TỔNG: Sát thương: 0 | Tốc đánh: 0 | Chí mạng: 0%"
+horizontal_alignment = 1
+
+[node name="ErrorLabel" type="Label" parent="Root/Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.35, 0.35, 1)
+theme_override_font_sizes/font_size = 13
+horizontal_alignment = 1
+
+[node name="FooterHBox" type="HBoxContainer" parent="Root/Panel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="ContinueButton" type="Button" parent="Root/Panel/VBox/FooterHBox"]
+custom_minimum_size = Vector2(320, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "TIẾP TỤC ĐỢT KẾ TIẾP"
+
+[node name="MenuButton" type="Button" parent="Root/Panel/VBox/FooterHBox"]
+custom_minimum_size = Vector2(160, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "⬅ ĐỔI TƯỚNG"
+
+[node name="QuitButton" type="Button" parent="Root/Panel/VBox/FooterHBox"]
+custom_minimum_size = Vector2(140, 44)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.42, 0.42, 1)
+theme_override_font_sizes/font_size = 14
+text = "✖ THOÁT GAME"
+

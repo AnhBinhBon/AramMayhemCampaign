@@ -1,0 +1,61 @@
+[gd_scene load_steps=15 format=3]
+
+[ext_resource type="Script" path="res://scripts/game/game.gd" id="1_game"]
+[ext_resource type="PackedScene" path="res://scenes/game/Arena.tscn" id="2_arena"]
+[ext_resource type="PackedScene" path="res://scenes/entities/Player.tscn" id="3_player"]
+[ext_resource type="Script" path="res://scripts/managers/object_pool.gd" id="4_pool"]
+[ext_resource type="Script" path="res://scripts/managers/enemy_spawner.gd" id="5_spawner"]
+[ext_resource type="Script" path="res://scripts/managers/wave_manager.gd" id="6_wave"]
+[ext_resource type="Script" path="res://scripts/managers/bonus_manager.gd" id="7_bonus"]
+[ext_resource type="Script" path="res://scripts/augment/augment_manager.gd" id="8_augment"]
+[ext_resource type="Script" path="res://scripts/items/shop_manager.gd" id="9_shop"]
+[ext_resource type="PackedScene" path="res://scenes/ui/HUD.tscn" id="10_hud"]
+[ext_resource type="PackedScene" path="res://scenes/ui/BonusRevealUI.tscn" id="11_breveal"]
+[ext_resource type="PackedScene" path="res://scenes/ui/AugmentUI.tscn" id="12_augui"]
+[ext_resource type="PackedScene" path="res://scenes/ui/ShopUI.tscn" id="13_shopui"]
+[ext_resource type="PackedScene" path="res://scenes/ui/ResultUI.tscn" id="14_resui"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_game")
+
+[node name="Arena" parent="." instance=ExtResource("2_arena")]
+
+[node name="Pickups" type="Node2D" parent="."]
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Projectiles" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("3_player")]
+
+[node name="FloatingTexts" type="Node2D" parent="."]
+
+[node name="Managers" type="Node" parent="."]
+
+[node name="ObjectPool" type="Node" parent="Managers"]
+script = ExtResource("4_pool")
+
+[node name="EnemySpawner" type="Node2D" parent="Managers"]
+script = ExtResource("5_spawner")
+
+[node name="WaveManager" type="Node" parent="Managers"]
+script = ExtResource("6_wave")
+
+[node name="BonusManager" type="Node" parent="Managers"]
+script = ExtResource("7_bonus")
+
+[node name="AugmentManager" type="Node" parent="Managers"]
+script = ExtResource("8_augment")
+
+[node name="ShopManager" type="Node" parent="Managers"]
+script = ExtResource("9_shop")
+
+[node name="HUD" parent="." instance=ExtResource("10_hud")]
+
+[node name="BonusRevealUI" parent="." instance=ExtResource("11_breveal")]
+
+[node name="AugmentUI" parent="." instance=ExtResource("12_augui")]
+
+[node name="ShopUI" parent="." instance=ExtResource("13_shopui")]
+
+[node name="ResultUI" parent="." instance=ExtResource("14_resui")]

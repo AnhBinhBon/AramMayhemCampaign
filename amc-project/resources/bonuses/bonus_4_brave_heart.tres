@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BonusData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/bonus_data.gd" id="1_bdata"]
+
+[resource]
+script = ExtResource("1_bdata")
+id = "brave_heart"
+bonus_name = "Trái Tim Dũng Sĩ"
+icon_path = "res://assets/sprites/bonuses/bonus_brave_heart.png"
+description = "Tăng +30% Máu tối đa và +2.0 Hồi máu mỗi giây."
+playstyle_hint = "Định hướng: Bền bỉ áp sát mục tiêu, không ngại va chạm tầm gần."
+kind = 3
+value = 0.3
+weight = 14.0
+accent_color = Color(0.98, 0.35, 0.42, 1)
+

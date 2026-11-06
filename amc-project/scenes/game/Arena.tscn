@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/game/arena.gd" id="1_arena"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hwall"]
+size = Vector2(1640, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vwall"]
+size = Vector2(40, 1040)
+
+[node name="Arena" type="Node2D"]
+script = ExtResource("1_arena")
+
+[node name="Walls" type="StaticBody2D" parent="."]
+collision_layer = 1
+collision_mask = 6
+
+[node name="TopWall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(0, -500)
+shape = SubResource("RectangleShape2D_hwall")
+
+[node name="BottomWall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(0, 500)
+shape = SubResource("RectangleShape2D_hwall")
+
+[node name="LeftWall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-800, 0)
+shape = SubResource("RectangleShape2D_vwall")
+
+[node name="RightWall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(800, 0)
+shape = SubResource("RectangleShape2D_vwall")
+

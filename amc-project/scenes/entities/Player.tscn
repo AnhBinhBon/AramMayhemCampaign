@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_player"]
+[ext_resource type="Script" path="res://scripts/player/player_stats.gd" id="3_pstats"]
+[ext_resource type="Script" path="res://scripts/player/player_skill.gd" id="4_pskill"]
+[ext_resource type="Script" path="res://scripts/items/inventory.gd" id="5_inv"]
+[ext_resource type="Script" path="res://scripts/weapon/weapon_controller.gd" id="6_wctrl"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_outline"]
+radius = 18.0
+height = 36.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_body"]
+radius = 16.0
+height = 32.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_player"]
+radius = 15.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_gun"]
+size = Vector3(24, 7, 1)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 1
+motion_mode = 1
+script = ExtResource("1_player")
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="OutlineMesh" type="MeshInstance2D" parent="Visuals"]
+self_modulate = Color(0.08, 0.08, 0.1, 1)
+mesh = SubResource("SphereMesh_outline")
+
+[node name="BodyMesh" type="MeshInstance2D" parent="Visuals"]
+self_modulate = Color(0.96, 0.58, 0.14, 1)
+mesh = SubResource("SphereMesh_body")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_player")
+
+[node name="PlayerStats" type="Node" parent="."]
+script = ExtResource("3_pstats")
+
+[node name="PlayerSkill" type="Node" parent="."]
+script = ExtResource("4_pskill")
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource("5_inv")
+
+[node name="WeaponController" type="Node2D" parent="."]
+script = ExtResource("6_wctrl")
+
+[node name="GunPivot" type="Node2D" parent="WeaponController"]
+
+[node name="GunMesh" type="MeshInstance2D" parent="WeaponController/GunPivot"]
+self_modulate = Color(0.28, 0.32, 0.38, 1)
+position = Vector2(18, 0)
+mesh = SubResource("BoxMesh_gun")
+
+[node name="Muzzle" type="Marker2D" parent="WeaponController/GunPivot"]
+position = Vector2(31, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+

@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="AugmentData" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/augment_data.gd" id="1_adata"]
+[ext_resource type="Script" path="res://scripts/data/stat_modifier.gd" id="2_smod"]
+
+[sub_resource type="Resource" id="Resource_mod1"]
+script = ExtResource("2_smod")
+stat = 4
+add = 0.0
+mult = 0.20
+
+[sub_resource type="Resource" id="Resource_mod2"]
+script = ExtResource("2_smod")
+stat = 8
+add = 15.0
+mult = 0.0
+
+[resource]
+script = ExtResource("1_adata")
+id = "abundant_mana"
+augment_name = "Pháp Lực Dồi Dào"
+icon_path = "res://assets/sprites/augments/aug_abundant_mana.png"
+description = "Tăng +20% Sức mạnh phép thuật (AP) & +15 Điểm hồi kỹ năng."
+rarity = 0
+accent_color = Color(0.85, 0.90, 0.95, 1)
+modifiers = [SubResource("Resource_mod1"), SubResource("Resource_mod2")]
+effects = []

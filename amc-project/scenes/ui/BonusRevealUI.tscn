@@ -1,0 +1,97 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/bonus_reveal_ui.gd" id="1_breveal"]
+
+[node name="BonusRevealUI" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_breveal")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Overlay" type="ColorRect" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.03, 0.04, 0.06, 0.84)
+
+[node name="CenterContainer" type="CenterContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CardPanel" type="PanelContainer" parent="Root/CenterContainer"]
+custom_minimum_size = Vector2(480, 390)
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="Root/CenterContainer/CardPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 26
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 26
+theme_override_constants/margin_bottom = 24
+
+[node name="VBox" type="VBoxContainer" parent="Root/CenterContainer/CardPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="HeaderLabel" type="Label" parent="Root/CenterContainer/CardPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78, 0.82, 0.9, 1)
+theme_override_font_sizes/font_size = 14
+text = "PHÚC LỢI ĐẦU TRẬN (HỆ THỐNG PHÁT NGẪU NHIÊN)"
+horizontal_alignment = 1
+
+[node name="IconContainer" type="CenterContainer" parent="Root/CenterContainer/CardPanel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+
+[node name="IconRect" type="TextureRect" parent="Root/CenterContainer/CardPanel/Margin/VBox/IconContainer"]
+custom_minimum_size = Vector2(88, 88)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BonusNameLabel" type="Label" parent="Root/CenterContainer/CardPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "VÉ MAY MẮN"
+horizontal_alignment = 1
+
+[node name="DescLabel" type="Label" parent="Root/CenterContainer/CardPanel/Margin/VBox"]
+custom_minimum_size = Vector2(410, 56)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Mô tả hiệu ứng phúc lợi"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HintLabel" type="Label" parent="Root/CenterContainer/CardPanel/Margin/VBox"]
+custom_minimum_size = Vector2(410, 42)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Định hướng lối chơi"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ConfirmButton" type="Button" parent="Root/CenterContainer/CardPanel/Margin/VBox"]
+custom_minimum_size = Vector2(320, 46)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 16
+text = "NHẬN PHÚC LỢI & XUẤT KÍCH"
+

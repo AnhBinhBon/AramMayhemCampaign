@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/character_data.gd" id="1_cdata"]
+[ext_resource type="Resource" path="res://resources/weapons/gun_ad.tres" id="2_wgun"]
+
+[resource]
+script = ExtResource("1_cdata")
+id = "ad_marksman"
+display_name = "Vayne - Xạ Thủ (AD)"
+character_scene_path = "res://scenes/entities/player/PlayerAD.tscn"
+icon_path = "res://assets/sprites/classes/class_ad.png"
+body_color = Color(0.96, 0.58, 0.14, 1)
+hand_color = Color(0.85, 0.45, 0.1, 1)
+buff_text = "+15% Tốc độ đánh, +10% Tỉ lệ chí mạng"
+debuff_text = "-15% Máu tối đa"
+base_max_hp = 100.0
+base_hp_regen = 1.0
+base_lifesteal = 0.0
+base_ad = 18.0
+base_ap = 0.0
+base_attack_speed = 1.85
+base_crit_chance = 0.15
+base_crit_damage = 1.75
+base_ability_haste = 0.0
+base_move_speed = 240.0
+base_armor = 5.0
+starting_weapon = ExtResource("2_wgun")
+skill_id = "ad_dash"
+skill_name = "Giờ Khắc Cuối Cùng"
+skill_icon_path = "res://assets/sprites/classes/skill_ad_dash.png"
+skill_cooldown = 10.0
+skill_description = "Bước vào trạng thái Thợ Săn Bóng Đêm trong 4.5s: Ẩn thân ngắn 0.8s, +35% AD, +50% Tốc đánh và +25% Tốc chạy."
+skill_q_id = "vayne_tumble_q"
+skill_q_name = "Nhào Lộn & Tên Bạc"
+skill_q_icon_path = "res://assets/sprites/augments/aug_mystic_punch.png"
+skill_q_cooldown = 3.5
+skill_q_description = "Nhào lộn 150px và bắn Mũi Tên Bạc gây 140% AD + 8% Máu tối đa mục tiêu."
+skill_e_id = "vayne_condemn_e"
+skill_e_name = "Kết Án"
+skill_e_icon_path = "res://assets/sprites/augments/aug_supernatural.png"
+skill_e_cooldown = 7.5
+skill_e_description = "Bắn tên hạng nặng gây 115% AD, đẩy lùi mạnh và làm choáng 1.2s (+100% AD nếu va tường)."

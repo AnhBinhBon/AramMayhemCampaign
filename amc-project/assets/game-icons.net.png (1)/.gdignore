@@ -1,0 +1,3 @@
+# Giữ tệp này để Godot không quét và import toàn bộ 4.000+ icon gây đơ/lag Editor.
+# Các icon cần dùng sẽ được trích xuất chọn lọc vào thư mục assets/sprites/.
+

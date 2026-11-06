@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/weapon_data.gd" id="1_wdata"]
+
+[resource]
+script = ExtResource("1_wdata")
+weapon_id = "staff_mage"
+weapon_name = "Trượng Ánh Sáng"
+weapon_type = 2
+weapon_sprite_path = "res://assets/sprites/weapons/weapon_mage_staff.png"
+weapon_scene_path = "res://scenes/weapons/models/WeaponStaffMage.tscn"
+hold_offset = Vector2(26, 0)
+muzzle_offset = Vector2(48, 0)
+visual_size = 48.0
+damage_scale = 1.55
+uses_ap = true
+base_range = 245.0
+projectile_speed = 520.0
+pierce_count = 0
+bounce_count = 0
+aoe_radius = 85.0
+knockback_force = 40.0
+projectile_color = Color(1, 0.38, 0.15, 1)
+gun_color = Color(0.58, 0.28, 0.88, 1)

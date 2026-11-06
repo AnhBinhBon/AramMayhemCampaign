@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/weapon_data.gd" id="1_wdata"]
+
+[resource]
+script = ExtResource("1_wdata")
+weapon_id = "axe_tank"
+weapon_name = "Đại Kiếm Demacia"
+weapon_type = 1
+weapon_sprite_path = "res://assets/sprites/weapons/weapon_tank_axe.png"
+weapon_scene_path = "res://scenes/weapons/models/WeaponGreatswordTank.tscn"
+hold_offset = Vector2(28, 0)
+muzzle_offset = Vector2(52, 0)
+visual_size = 54.0
+damage_scale = 1.55
+uses_ap = false
+base_range = 110.0
+projectile_speed = 0.0
+pierce_count = 0
+bounce_count = 0
+aoe_radius = 0.0
+knockback_force = 280.0
+projectile_color = Color(0.85, 0.95, 0.85, 1)
+gun_color = Color(0.35, 0.48, 0.38, 1)

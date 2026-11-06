@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_data.gd" id="1_idata"]
+[ext_resource type="Script" path="res://scripts/data/stat_modifier.gd" id="2_smod"]
+
+[sub_resource type="Resource" id="Resource_mod1"]
+script = ExtResource("2_smod")
+stat = 3
+add = 15.0
+mult = 0.0
+
+[sub_resource type="Resource" id="Resource_mod2"]
+script = ExtResource("2_smod")
+stat = 2
+add = 0.10
+mult = 0.0
+
+[resource]
+script = ExtResource("1_idata")
+id = "bloodthirster"
+item_name = "Huyết Kiếm"
+icon_path = "res://assets/sprites/items/item_bloodthirster.png"
+description = "+15 AD & +10% Hút máu"
+tier = 1
+price = 80
+modifiers = [SubResource("Resource_mod1"), SubResource("Resource_mod2")]

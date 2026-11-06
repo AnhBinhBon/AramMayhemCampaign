@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/weapon_data.gd" id="1_wdata"]
+
+[resource]
+script = ExtResource("1_wdata")
+weapon_id = "crossbow_ad"
+weapon_name = "Nỏ Bạc Bóng Đêm"
+weapon_type = 0
+weapon_sprite_path = "res://assets/sprites/weapons/weapon_ad_crossbow.png"
+weapon_scene_path = "res://scenes/weapons/models/WeaponCrossbowAD.tscn"
+hold_offset = Vector2(24, 0)
+muzzle_offset = Vector2(44, 0)
+visual_size = 40.0
+damage_scale = 1.0
+uses_ap = false
+base_range = 360.0
+projectile_speed = 650.0
+pierce_count = 0
+bounce_count = 0
+aoe_radius = 0.0
+knockback_force = 0.0
+projectile_color = Color(0.88, 0.94, 1, 1)
+gun_color = Color(0.65, 0.7, 0.78, 1)

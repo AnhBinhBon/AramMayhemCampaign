@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/character_data.gd" id="1_cdata"]
+[ext_resource type="Resource" path="res://resources/weapons/staff_mage.tres" id="2_wstaff"]
+
+[resource]
+script = ExtResource("1_cdata")
+id = "mage_ap"
+display_name = "Lux - Pháp Sư (AP)"
+character_scene_path = "res://scenes/entities/player/PlayerMage.tscn"
+icon_path = "res://assets/sprites/classes/class_ap.png"
+body_color = Color(0.68, 0.35, 0.98, 1)
+hand_color = Color(0.5, 0.22, 0.82, 1)
+buff_text = "+25% Sức mạnh phép thuật (AP), +20 Điểm hồi kỹ năng"
+debuff_text = "-20% Máu tối đa"
+base_max_hp = 80.0
+base_hp_regen = 1.0
+base_lifesteal = 0.0
+base_ad = 10.0
+base_ap = 35.0
+base_attack_speed = 0.92
+base_crit_chance = 0.1
+base_crit_damage = 1.75
+base_ability_haste = 20.0
+base_move_speed = 230.0
+base_armor = 3.0
+starting_weapon = ExtResource("2_wstaff")
+skill_id = "mage_firestorm"
+skill_name = "Cầu Vồng Tối Thượng"
+skill_icon_path = "res://assets/sprites/classes/skill_ap_firestorm.png"
+skill_cooldown = 8.5
+skill_description = "Khai hỏa đại pháo ánh sáng xuyên thấu dài 520px gây 300% AP (+25% nếu mục tiêu đang bị trói) và tạo vòng quang năng."
+skill_q_id = "lux_binding_q"
+skill_q_name = "Khóa Ánh Sáng"
+skill_q_icon_path = "res://assets/sprites/augments/aug_mystic_punch.png"
+skill_q_cooldown = 4.0
+skill_q_description = "Bắn cầu ánh sáng xuyên tối đa 2 mục tiêu, gây 145% AP và Trói chân 1.5s."
+skill_e_id = "lux_singularity_e"
+skill_e_name = "Quả Cầu Ánh Sáng"
+skill_e_icon_path = "res://assets/sprites/augments/aug_supernatural.png"
+skill_e_cooldown = 6.0
+skill_e_description = "Quăng cầu quang năng bán kính 130px làm chậm 40% rồi phát nổ gây 185% AP sát thương diện rộng."

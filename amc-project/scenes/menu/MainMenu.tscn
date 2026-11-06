@@ -1,0 +1,143 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_mmenu"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mmenu")
+
+[node name="Backdrop" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.06, 0.09, 1)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainVBox" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+theme_override_constants/separation = 22
+alignment = 1
+
+[node name="TitleBox" type="VBoxContainer" parent="Center/MainVBox"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="TitleLabel" type="Label" parent="Center/MainVBox/TitleBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.84, 0.2, 1)
+theme_override_font_sizes/font_size = 38
+text = "ARAM MAYHEM CAMPAIGN"
+horizontal_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="Center/MainVBox/TitleBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.72, 0.82, 0.96, 1)
+theme_override_font_sizes/font_size = 15
+text = "CHIẾN DỊCH KHẢO NGHIỆM ĐẤU TRƯỜNG SINH TỒN"
+horizontal_alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="Center/MainVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.38, 0.92, 0.58, 1)
+theme_override_font_sizes/font_size = 15
+text = "★ KỶ LỤC CHIẾN DỊCH: 0 ĐIỂM ★"
+horizontal_alignment = 1
+
+[node name="ButtonsVBox" type="VBoxContainer" parent="Center/MainVBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="StartButton" type="Button" parent="Center/MainVBox/ButtonsVBox"]
+custom_minimum_size = Vector2(300, 48)
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "BẮT ĐẦU CHIẾN DỊCH"
+
+[node name="GuideButton" type="Button" parent="Center/MainVBox/ButtonsVBox"]
+custom_minimum_size = Vector2(300, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "HƯỚNG DẪN CHIẾN ĐẤU"
+
+[node name="QuitButton" type="Button" parent="Center/MainVBox/ButtonsVBox"]
+custom_minimum_size = Vector2(300, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "THOÁT TRÒ CHƠI"
+
+[node name="VersionLabel" type="Label" parent="Center/MainVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.42, 0.48, 0.58, 1)
+theme_override_font_sizes/font_size = 12
+text = "Đồ án Tốt nghiệp 2026 - Godot Engine 4.x"
+horizontal_alignment = 1
+
+[node name="GuideDialog" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -310.0
+offset_top = -210.0
+offset_right = 310.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="GuideDialog"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="GuideDialog/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Title" type="Label" parent="GuideDialog/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.84, 0.2, 1)
+theme_override_font_sizes/font_size = 18
+text = "HƯỚNG DẪN CHIẾN ĐẤU & LUẬT CHƠI"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="GuideDialog/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.9, 0.96, 1)
+theme_override_font_sizes/font_size = 13
+text = "• Di chuyển: Phím W A S D hoặc 4 phím Mũi tên.
+• Tấn công: Vũ khí tự động quét mục tiêu gần nhất và khai hỏa liên tục.
+• Kỹ năng [Space]: Lướt chiến thuật, miễn nhiễm sát thương và tăng 50% Tốc đánh trong 3s.
+• Phúc lợi & Lõi nâng cấp: Bốc ngẫu nhiên sau Wave 1, 3, 5 cường hóa sức mạnh đột phá.
+• Cửa hàng 6 Ô: Mua sắm trang bị giữa mỗi đợt, bán đồ hoàn lại 50% vàng.
+• Wave 6 (Chuẩn bị): Mật độ quái đông, lượng máu thấp, nhân đôi lượng vàng rơi.
+• Wave 7 (Trùm cuối): Đối đầu Chiến Hạm Hủy Diệt với 2 pha chiến đấu nảy lửa!"
+autowrap_mode = 2
+
+[node name="CloseGuideButton" type="Button" parent="GuideDialog/Margin/VBox"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 14
+text = "ĐÃ HIỂU & ĐÓNG LẠI"
+

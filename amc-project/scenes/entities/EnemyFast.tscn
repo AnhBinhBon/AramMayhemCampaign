@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/enemy/enemy.gd" id="1_enemy"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_outline"]
+radius = 13.0
+height = 26.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_body"]
+radius = 11.0
+height = 22.0
+
+[sub_resource type="PrismMesh" id="PrismMesh_claw"]
+size = Vector3(8, 14, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_tail"]
+size = Vector3(10, 14, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_eye"]
+radius = 4.0
+height = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_enemy"]
+radius = 11.0
+
+[node name="EnemyFast" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 1
+motion_mode = 1
+script = ExtResource("1_enemy")
+enemy_type = 1
+base_max_hp = 22.0
+move_speed = 185.0
+contact_damage = 9.0
+gold_drop_value = 3
+body_color = Color(0.98, 0.78, 0.18, 1)
+custom_sprite_path = "res://assets/sprites/enemies/lol_super_minion.png"
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="TailSpike" type="MeshInstance2D" parent="Visuals"]
+self_modulate = Color(0.62, 0.28, 0.78, 1)
+position = Vector2(-11, 0)
+rotation = -1.5708
+mesh = SubResource("PrismMesh_tail")
+
+[node name="OutlineMesh" type="MeshInstance2D" parent="Visuals"]
+self_modulate = Color(0.12, 0.08, 0.04, 1)
+mesh = SubResource("SphereMesh_outline")
+
+[node name="BodyMesh" type="MeshInstance2D" parent="Visuals"]
+self_modulate = Color(0.98, 0.78, 0.18, 1)
+mesh = SubResource("SphereMesh_body")
+
+[node name="MandibleLeft" type="MeshInstance2D" parent="Visuals"]
+self_modulate = Color(1, 0.92, 0.45, 1)
+position = Vector2(12, -7)
+rotation = 1.35
+mesh = SubResource("PrismMesh_claw")
+
+[node name="MandibleRight" type="MeshInstance2D" parent="Visuals"]
+self_modulate = Color(1, 0.92, 0.45, 1)
+position = Vector2(12, 7)
+rotation = 1.79
+mesh = SubResource("PrismMesh_claw")
+
+[node name="VoidCoreEye" type="MeshInstance2D" parent="Visuals"]
+self_modulate = Color(0.95, 0.25, 0.85, 1)
+position = Vector2(4, 0)
+mesh = SubResource("SphereMesh_eye")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_enemy")

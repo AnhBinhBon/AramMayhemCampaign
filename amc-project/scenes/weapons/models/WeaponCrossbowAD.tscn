@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/weapons/weapon_ad_crossbow.png" id="1_cbow"]
+
+[node name="WeaponCrossbowAD" type="Node2D"]
+
+[node name="WeaponSprite" type="Sprite2D" parent="."]
+position = Vector2(24, 0)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_cbow")
+
+[node name="MuzzlePoint" type="Marker2D" parent="."]
+position = Vector2(44, 0)
+

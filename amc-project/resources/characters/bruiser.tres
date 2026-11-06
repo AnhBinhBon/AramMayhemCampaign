@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/character_data.gd" id="1_cdata"]
+[ext_resource type="Resource" path="res://resources/weapons/sword_bruiser.tres" id="2_wsword"]
+
+[resource]
+script = ExtResource("1_cdata")
+id = "bruiser"
+display_name = "Xin Zhao - Đấu Sĩ"
+character_scene_path = "res://scenes/entities/player/PlayerBruiser.tscn"
+icon_path = "res://assets/sprites/classes/class_bruiser.png"
+body_color = Color(0.85, 0.22, 0.22, 1)
+hand_color = Color(0.68, 0.15, 0.15, 1)
+buff_text = "+15% Máu tối đa, +8% Hút máu"
+debuff_text = "-10% Tầm đánh"
+base_max_hp = 125.0
+base_hp_regen = 2.0
+base_lifesteal = 0.08
+base_ad = 22.0
+base_ap = 0.0
+base_attack_speed = 1.05
+base_crit_chance = 0.1
+base_crit_damage = 1.65
+base_ability_haste = 5.0
+base_move_speed = 245.0
+base_armor = 10.0
+starting_weapon = ExtResource("2_wsword")
+skill_id = "bruiser_war_cry"
+skill_name = "Bán Nguyệt Thương"
+skill_icon_path = "res://assets/sprites/classes/skill_bruiser_roar.png"
+skill_cooldown = 11.0
+skill_description = "Quét thương bán kính 180px gây 160% AD + 15% Máu hiện tại mục tiêu, hất văng địch và nhận +35% Tốc chạy, +20% Hút máu trong 4s."
+skill_q_id = "xinzhao_talon_q"
+skill_q_name = "Liên Hoàn Tam Kích"
+skill_q_icon_path = "res://assets/sprites/augments/aug_mystic_punch.png"
+skill_q_cooldown = 4.5
+skill_q_description = "Đâm 3 mũi thương liên hoàn gây tổng 210% AD, hất tung 0.75s và giảm 1.0s hồi chiêu E & SPACE."
+skill_e_id = "xinzhao_charge_e"
+skill_e_name = "Can Trường"
+skill_e_icon_path = "res://assets/sprites/augments/aug_supernatural.png"
+skill_e_cooldown = 6.5
+skill_e_description = "Đột kích áp sát mục tiêu (260px), gây 110% AD + 60% AP diện rộng, làm chậm và tăng +45% Tốc đánh trong 3.5s."

@@ -1,0 +1,118 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://scripts/enemy/final_boss.gd" id="1_boss"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_boss"]
+radius = 42.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_carapace"]
+size = Vector3(72, 72, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_outline"]
+radius = 46.0
+height = 92.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_body"]
+radius = 43.0
+height = 86.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_core"]
+radius = 19.0
+height = 38.0
+
+[sub_resource type="PrismMesh" id="PrismMesh_spike"]
+size = Vector3(14, 24, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hitbox"]
+radius = 46.0
+
+[node name="FinalBoss" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 1
+motion_mode = 1
+script = ExtResource("1_boss")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_boss")
+
+[node name="TelegraphLine" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 0, 700)
+width = 24.0
+default_color = Color(1, 0.15, 0.15, 0.55)
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="VoidCarapace" type="MeshInstance2D" parent="Visuals"]
+self_modulate = Color(0.22, 0.08, 0.34, 1)
+rotation = 0.785398
+mesh = SubResource("BoxMesh_carapace")
+
+[node name="OutlineMesh" type="MeshInstance2D" parent="Visuals"]
+self_modulate = Color(0.1, 0.05, 0.15, 1)
+mesh = SubResource("SphereMesh_outline")
+
+[node name="BodyMesh" type="MeshInstance2D" parent="Visuals"]
+self_modulate = Color(0.32, 0.1, 0.46, 1)
+mesh = SubResource("SphereMesh_body")
+
+[node name="CoreMesh" type="MeshInstance2D" parent="Visuals"]
+self_modulate = Color(1, 0.22, 0.55, 1)
+mesh = SubResource("SphereMesh_core")
+
+[node name="RingSpikes" type="Node2D" parent="Visuals"]
+
+[node name="Spike0" type="MeshInstance2D" parent="Visuals/RingSpikes"]
+self_modulate = Color(0.88, 0.28, 0.52, 1)
+position = Vector2(52, 0)
+rotation = 1.5708
+mesh = SubResource("PrismMesh_spike")
+
+[node name="Spike1" type="MeshInstance2D" parent="Visuals/RingSpikes"]
+self_modulate = Color(0.88, 0.28, 0.52, 1)
+position = Vector2(36.77, 36.77)
+rotation = 2.3562
+mesh = SubResource("PrismMesh_spike")
+
+[node name="Spike2" type="MeshInstance2D" parent="Visuals/RingSpikes"]
+self_modulate = Color(0.88, 0.28, 0.52, 1)
+position = Vector2(0, 52)
+rotation = 3.1416
+mesh = SubResource("PrismMesh_spike")
+
+[node name="Spike3" type="MeshInstance2D" parent="Visuals/RingSpikes"]
+self_modulate = Color(0.88, 0.28, 0.52, 1)
+position = Vector2(-36.77, 36.77)
+rotation = 3.927
+mesh = SubResource("PrismMesh_spike")
+
+[node name="Spike4" type="MeshInstance2D" parent="Visuals/RingSpikes"]
+self_modulate = Color(0.88, 0.28, 0.52, 1)
+position = Vector2(-52, 0)
+rotation = 4.7124
+mesh = SubResource("PrismMesh_spike")
+
+[node name="Spike5" type="MeshInstance2D" parent="Visuals/RingSpikes"]
+self_modulate = Color(0.88, 0.28, 0.52, 1)
+position = Vector2(-36.77, -36.77)
+rotation = 5.4978
+mesh = SubResource("PrismMesh_spike")
+
+[node name="Spike6" type="MeshInstance2D" parent="Visuals/RingSpikes"]
+self_modulate = Color(0.88, 0.28, 0.52, 1)
+position = Vector2(0, -52)
+rotation = 6.2832
+mesh = SubResource("PrismMesh_spike")
+
+[node name="Spike7" type="MeshInstance2D" parent="Visuals/RingSpikes"]
+self_modulate = Color(0.88, 0.28, 0.52, 1)
+position = Vector2(36.77, -36.77)
+rotation = 0.7854
+mesh = SubResource("PrismMesh_spike")
+
+[node name="HitboxArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxArea"]
+shape = SubResource("CircleShape2D_hitbox")
+

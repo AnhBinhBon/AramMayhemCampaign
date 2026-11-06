@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/character_data.gd" id="1_cdata"]
+[ext_resource type="Resource" path="res://resources/weapons/axe_tank.tres" id="2_waxe"]
+
+[resource]
+script = ExtResource("1_cdata")
+id = "tank"
+display_name = "Garen - Đỡ Đòn"
+character_scene_path = "res://scenes/entities/player/PlayerTank.tscn"
+icon_path = "res://assets/sprites/classes/class_tank.png"
+body_color = Color(0.22, 0.78, 0.38, 1)
+hand_color = Color(0.15, 0.6, 0.28, 1)
+buff_text = "+35% Máu tối đa, +10 Giáp"
+debuff_text = "-15% Tốc độ di chuyển"
+base_max_hp = 155.0
+base_hp_regen = 3.5
+base_lifesteal = 0.0
+base_ad = 16.0
+base_ap = 0.0
+base_attack_speed = 0.78
+base_crit_chance = 0.05
+base_crit_damage = 1.5
+base_ability_haste = 0.0
+base_move_speed = 205.0
+base_armor = 18.0
+starting_weapon = ExtResource("2_waxe")
+skill_id = "tank_reflect_shield"
+skill_name = "Công Lý Demacia"
+skill_icon_path = "res://assets/sprites/classes/skill_tank_shield.png"
+skill_cooldown = 10.5
+skill_description = "Bật Giáp Dũng Cảm giảm 50% sát thương trong 4s và giáng Đại Kiếm Ánh Sáng gây 150% AD + 25% máu đã mất mục tiêu."
+skill_q_id = "garen_strike_q"
+skill_q_name = "Đòn Quyết Định"
+skill_q_icon_path = "res://assets/sprites/augments/aug_mystic_punch.png"
+skill_q_cooldown = 4.5
+skill_q_description = "Tăng +35% Tốc chạy trong 1.5s và bổ đại kiếm hình quạt gây 145% AD + 80% Giáp kèm Câm lặng 1.0s."
+skill_e_id = "garen_judgment_e"
+skill_e_name = "Phán Quyết"
+skill_e_icon_path = "res://assets/sprites/augments/aug_supernatural.png"
+skill_e_cooldown = 7.5
+skill_e_description = "Xoay đại kiếm quanh thân liên tục 3.0s (8 vòng), mỗi nhịp gây 45% AD + 35% Giáp sát thương diện rộng."

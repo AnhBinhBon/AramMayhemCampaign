@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BonusData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/bonus_data.gd" id="1_bdata"]
+
+[resource]
+script = ExtResource("1_bdata")
+id = "bounty_hunter"
+bonus_name = "Thợ Săn Tiền Thưởng"
+icon_path = "res://assets/sprites/bonuses/bonus_bounty_hunter.png"
+description = "Tăng +25% lượng Vàng rơi ra từ mọi quái vật trong suốt chiến dịch."
+playstyle_hint = "Định hướng: Dọn quái tối đa ở Đợt 6 Chuẩn Bị để mua sắm trang bị Huyền Thoại."
+kind = 6
+value = 0.25
+weight = 12.0
+accent_color = Color(1, 0.62, 0.2, 1)
+

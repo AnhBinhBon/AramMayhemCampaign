@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BonusData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/bonus_data.gd" id="1_bdata"]
+
+[resource]
+script = ExtResource("1_bdata")
+id = "pioneer_core"
+bonus_name = "Lõi Tiên Phong"
+icon_path = "res://assets/sprites/bonuses/bonus_pioneer_core.png"
+description = "Mở rộng giới hạn +1 Lõi nâng cấp (tối đa 4 Lõi) và nhận ngay +15% AD & +15% Tốc đánh."
+playstyle_hint = "Định hướng: Tối ưu hóa sức mạnh tổng hợp từ nhiều Lõi nâng cấp."
+kind = 2
+value = 1.0
+weight = 8.0
+accent_color = Color(0.45, 0.88, 1, 1)
+

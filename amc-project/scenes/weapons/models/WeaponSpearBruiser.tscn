@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/weapons/weapon_bruiser_sword.png" id="1_spear"]
+
+[node name="WeaponSpearBruiser" type="Node2D"]
+
+[node name="WeaponSprite" type="Sprite2D" parent="."]
+position = Vector2(28, 0)
+scale = Vector2(0.34, 0.34)
+texture = ExtResource("1_spear")
+
+[node name="MuzzlePoint" type="Marker2D" parent="."]
+position = Vector2(52, 0)
+

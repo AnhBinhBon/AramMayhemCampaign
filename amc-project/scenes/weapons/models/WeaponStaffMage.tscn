@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/weapons/weapon_mage_staff.png" id="1_staff"]
+
+[node name="WeaponStaffMage" type="Node2D"]
+
+[node name="WeaponSprite" type="Sprite2D" parent="."]
+position = Vector2(26, 0)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_staff")
+
+[node name="MuzzlePoint" type="Marker2D" parent="."]
+position = Vector2(48, 0)
+
